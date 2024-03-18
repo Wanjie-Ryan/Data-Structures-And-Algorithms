@@ -14,3 +14,5 @@ function factorial(n) {
 }
 
 console.log(factorial(1));
+
+// Big O notation is linear O(n) because the for loop is dependent on the input size
