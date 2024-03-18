@@ -1,3 +1,5 @@
+// Q. Given a number 'n' find the first 'n' elements of the fibonacci sequence
+
 function fibonacci (n){
 
     // the array is initialized with 0 and 1 because they are the first numbers in the sequence
