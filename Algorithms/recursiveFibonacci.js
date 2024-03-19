@@ -17,3 +17,5 @@ function recursiveFunction(n) {
 }
 
 console.log(recursiveFunction(6));
+
+// the big o for this code is O(2^n), the function multiplies itself as it goes down the recursion tree in the base of 2, 2*3.
