@@ -15,7 +15,7 @@ function power(n) {
   }
   return true;
 }
-
+ 
 console.log(power(2));
 console.log(power(6));
 console.log(power(24));
