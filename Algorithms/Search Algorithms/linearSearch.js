@@ -36,6 +36,7 @@ function DynamicArray(arr, x) {
 }
 
 // The Big O for this code is O(n)
+// As the number of items in the array increases, the number of time of iteration also increases
 
 console.log(DynamicArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 12));
 console.log(DynamicArray([-5, 2, 10, 4, 6], 6));

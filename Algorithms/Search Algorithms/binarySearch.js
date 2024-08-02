@@ -1,5 +1,5 @@
 // Q. Given a sorted array of n elements and a target element t, find the index of t in the array. Return -1 if the target element is not found
-
+// BinarySearch only works for sorted arrays
 // find the middle element of the array, compare your target value to the middle element, if the target value is equal to the middle element, return the index of the middle element, if the target value is less than the middle element, then search the left half of the array, if the target value is greater than the middle element, then search the right half of the array, repeat the process until the target value is found or the array is empty
 
 function BinarySearch(array, x) {
