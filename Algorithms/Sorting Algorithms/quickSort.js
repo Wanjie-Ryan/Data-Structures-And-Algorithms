@@ -19,7 +19,7 @@ function QuickSort(arr) {
   let left = [];
   let right = [];
   // a for loop to traverse the array.
-  for (var i = 0; i < arr.length - 1; i++) {
+  for (let i = 0; i < arr.length - 1; i++) {
     // if the element is less than the pivot, it will be pushed to the left of the array, and if greater, it will be pushed to the right of the array.
     if (arr[i] < pivot) {
       left.push(arr[i]);
@@ -29,10 +29,11 @@ function QuickSort(arr) {
 
     // repeat the above process for the right and left sub array, and concatenate it with the pivot element
     // this here is recusrion, and to exit a recusrion we need a base case
-    return [...QuickSort(left), pivot, ...QuickSort(right)];
   }
+  return [...QuickSort(left), pivot, ...QuickSort(right)];
 }
 
 let arr = [8, 20, -2, 4, -6];
-console.log(QuickSort(arr));
+QuickSort(arr);
 // console.log(arr)
+console.log(QuickSort(arr));
