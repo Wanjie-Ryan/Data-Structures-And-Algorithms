@@ -44,3 +44,5 @@ let arr = [8, 20, -2, 4, -6];
 MergeSort(arr)
 // console.log(arr)
 console.log(MergeSort(arr));
+
+// time complexity is O(nlogn), it is a combination of recursion and a loop
