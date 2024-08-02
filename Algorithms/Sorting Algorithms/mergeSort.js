@@ -1,0 +1,1 @@
+// Divide the array into sub arrays, each containing only one element. (An array with one element is considered sorted)
