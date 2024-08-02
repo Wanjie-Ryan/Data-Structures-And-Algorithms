@@ -27,6 +27,7 @@ function Merge(leftArr, rightArr){
     while(leftArr.length && rightArr.length){
 
         if(leftArr[0] <= rightArr[0]){
+            // the .shift is used to remove the first element from the array.
             sortedArr.push(leftArr.shift()) // we remove the first element from the left array and push it into the sorted array
         }
         else{
