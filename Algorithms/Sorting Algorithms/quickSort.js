@@ -37,3 +37,6 @@ let arr = [8, 20, -2, 4, -6];
 QuickSort(arr);
 // console.log(arr)
 console.log(QuickSort(arr));
+
+// the worst case complexity for this is O(n^2)
+// Avg case complexity is O(nlogn) this is because we recursively divide the array into two halves and then sort them, and also there is a for loop there
