@@ -21,6 +21,7 @@ function BubbleSort(arr){
             }
         }
     }while(swapped)
+        // while swapped is true, keep running the for loop
 
 
 }
@@ -28,3 +29,4 @@ function BubbleSort(arr){
 let arr = [8, 20, -2, 4, -6]
 BubbleSort(arr)
 console.log(arr)
+// the big o notation is O(n^2) as the are working with nested loops
