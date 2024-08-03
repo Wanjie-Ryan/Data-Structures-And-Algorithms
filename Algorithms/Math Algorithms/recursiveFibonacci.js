@@ -3,7 +3,7 @@
 
 // Tips for recursive solutions
 // 1. Figure out how to break down the problem into smaller versions of the same problem
-// 2. Identify the base case for recursion
+// 2. Identify the base case for recursion - a condition that terminates the recursion
 
 // if F represents a function to calculate the Fibonacci number, then:
 // Fn = Fn-1 + Fn-2
