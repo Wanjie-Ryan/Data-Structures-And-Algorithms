@@ -1,5 +1,6 @@
 // Q. Given a number 'n' find the first 'n' elements of the fibonacci sequence
 // Fibonacci Formula: F(n)=F(n−1)+F(n−2), and the first two fibonacci numbers are [0,1]
+// Fibonacci sequence is a sequence in which each number is the sum of the 2 preceding ones.
 function fibonacci(n) {
   // the array is initialized with 0 and 1 because they are the first numbers in the sequence
   var fiboArray = [0, 1];
