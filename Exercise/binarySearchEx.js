@@ -15,7 +15,7 @@
 // Input: nums = [1,3,5,6], target = 7
 // Output: 4
 
-function BinarySearch (array, target){
+let search = function BinarySearch (array, target){
 
     let left = 0;
     let right = array.length -1;
@@ -40,6 +40,6 @@ function BinarySearch (array, target){
 
 }
 
-console.log(BinarySearch([1,3,5,6], 5))
-console.log(BinarySearch([1,3,5,6], 2))
-console.log(BinarySearch([1,3,5,6], 7))
+console.log(search([1,3,5,6], 5))
+// console.log(BinarySearch([1,3,5,6], 2))
+// console.log(BinarySearch([1,3,5,6], 7))
