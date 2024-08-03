@@ -1,0 +1,1 @@
+// in quick sort, you solve the question by picking a pivot, preferablly, the last element, and everything that is smaller than that pivot is shifted to the left of the pivot and everything that is greater is shifted to the right of the pivot, this is done through recursion
