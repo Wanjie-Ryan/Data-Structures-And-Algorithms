@@ -7,32 +7,31 @@
 //  (head)10 -> 20 -> 30 -> null
 
 // instantiate the node class
-class Node{
-
-    constructor(value){
-        // the node will have a value and the next which will be null for starters
-        this.value = value
-        this.next = null
-    }
+class Node {
+  constructor(value) {
+    // the node will have a value and the next which will be null for starters
+    this.value = value;
+    this.next = null;
+  }
 }
 
 // always maintain a pointer to the first node of the list, if the list is empty then the head should point at null
 class LinkedList {
+  constructor() {
+    this.head = null;
+    this.size = 0;
+  }
 
-    constructor(){
-        this.head = null
-        this.size = 0
-    }
+  isEmpty() {
+    return this.size === 0;
+  }
 
-    isEmpty(){
-        return this.size === 0
-    }
-
-    getSize(){
-        // returns the number of nodes in the list
-        return this.size
-    }
-
-
-
+  getSize() {
+    // returns the number of nodes in the list
+    return this.size;
+  }
 }
+
+const list = new LinkedList();
+console.log("List is empty", list.isEmpty());
+console.log("List size", list.getSize());
