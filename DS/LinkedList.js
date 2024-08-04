@@ -11,7 +11,7 @@ class Node {
   constructor(value) {
     // the node will have a value and the next which will be null for starters
     this.value = value;
-    this.next = null;
+    this.next = null; // pointer
   }
 }
 
@@ -46,14 +46,75 @@ class LinkedList {
     // update the size to keep track of the number of nodes in the list
     this.size++;
   }
+
+  // method to print the list 
+  print(){
+    if(this.isEmpty()){
+        console.log('List is empty')
+    }
+    else{
+        let currentNode = this.head;
+        let listValues = ''
+        while(currentNode){
+            listValues += `${currentNode.value} `
+            // point current to the next node
+            currentNode = currentNode.next;
+            // should repeat until current points to the last node which is null then exits
+
+        }
+        console.log(listValues)
+    }
+
+
+
+  }
+
+  append(value){
+
+    // create a new node that will be added to the end of the list, the node will contain a value and a pointer to the next null
+    const node = new Node(value)
+    // if the list is empty, make the new node the head of the list
+    if(this.isEmpty()){
+        this.head = node
+    }else{
+        // if list is not empty, traverse to the last node of the list
+        let prev = this.head
+        // while previous.next exists, then we advance to the next node
+        while(prev.next){
+            prev = prev.next
+        }
+        prev.next = node
+    }
+    this.size ++
+
+
+
+  }
+
+  // inserting the value at a given index
+
+  insert(value, index){
+
+    if(index < 0 || index> this.size){
+      console.log('Invalid index')
+      return
+    }
+
+
+  }
+
+
 }
 
 const list = new LinkedList();
 console.log("List is empty", list.isEmpty());
 console.log("List size", list.getSize());
+list.print();
 list.prepend(12);
+list.print();
 list.prepend(16);
 list.prepend(18);
 list.prepend(19);
-
+list.append(33);
+list.print();
 // To add a value to the linked list, you must create a new node that hold the value and the pointer that points to the next node if any.
