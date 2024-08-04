@@ -30,8 +30,30 @@ class LinkedList {
     // returns the number of nodes in the list
     return this.size;
   }
+
+  // create a method that adds a value in the node, and accepts a value as a parameter
+  prepend(value) {
+    const node = new Node(value);
+    if (this.isEmpty()) {
+      this.head = node;
+    } else {
+      // to add a new node at the start....... make the newly created node point at the head node, then make the newly added node as the head of the list, to ensure that both are connected and the head points to the start of the node
+
+      node.next = this.head;
+      this.head = node;
+    }
+
+    // update the size to keep track of the number of nodes in the list
+    this.size++;
+  }
 }
 
 const list = new LinkedList();
 console.log("List is empty", list.isEmpty());
 console.log("List size", list.getSize());
+list.prepend(12);
+list.prepend(16);
+list.prepend(18);
+list.prepend(19);
+
+// To add a value to the linked list, you must create a new node that hold the value and the pointer that points to the next node if any.
