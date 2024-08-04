@@ -14,4 +14,47 @@ class Queue{
         this.Queue = []
     }
 
+    // implementing method enqueue that adds an element to the end of the queue using the push method
+
+    enqueue(element){
+        this.Queue.push(element)
+    }
+
+    dequeue(){
+        return this.Queue.shift()
+    }
+
+    isEmpty(){
+        return this.Queue.length === 0
+    }
+
+    peek(){
+        // if the Queue is not empty then it will return the first element of the queue 
+        if(!this.isEmpty()){
+            return this.Queue[0]
+        }
+        return null
+    }
+    size(){
+        return this.Queue.length
+    }
+
+    print(){
+        console.log(this.Queue.toString())
+    }
+
 }
+
+// creating a new instance of the Queue
+
+const queue = new Queue
+console.log(queue.isEmpty()) 
+queue.enqueue(20)
+queue.enqueue(40)
+queue.enqueue(10)
+queue.enqueue(60)
+queue.enqueue(80)
+console.log(queue.size())
+queue.print()
+console.log(queue.dequeue())
+console.log(queue.peek())
