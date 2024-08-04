@@ -11,81 +11,85 @@
 // 7. print() - visualize elements in the queue.
 
 class CircularQueue {
+  // capacity represents the max size of the circular queue. We use the capacity to create an array of fixed size.
+  constructor(capacity) {
+    this.items = new Array(capacity);
+    this.capacity = capacity; // also store the capacity in a property
+    this.currentLength = 0; /// keeps track of the number of items in the queue
+    this.rear = -1;
+    this.front = -1; // we have two pointers to keep track of the front and the end of the queue, are both initialized to-1 and are not pointing to any position in the queue
+  }
 
-    // capacity represents the max size of the circular queue. We use the capacity to create an array of fixed size.
-    constructor(capacity){
+  isFull() {
+    // if the length of the queue is equal to the capacity, then the queue is full
+    return this.currentLength === this.capacity;
+  }
 
-        this.items = new Array(capacity)
-        this.capacity = capacity // also store the capacity in a property
-        this.currentLength = 0 /// keeps track of the number of items in the queue
-        this.rear = -1
-        this.front = -1 // we have two pointers to keep track of the front and the end of the queue, are both initialized to-1 and are not pointing to any position in the queue
+  isEmpty() {
+    return this.currentLength === 0;
+  }
 
+  // the front and rear pointers are initialized to -1, and do not point to anywhere in the queue.
+  enqueue(element) {
+    // check if the queue is full first
+    if (!this.isFull()) {
+      // increment the rear pointer to point at index 0, then insert the element at the index 0
+      this.rear = (this.rear + 1) % this.capacity;
+      this.items[this.rear] = element;
+      this.currentLength += 1; // increment the current length value
+      if (this.front === -1) {
+        this.front = this.rear;
+      }
     }
+  }
 
-    isFull(){
-        // if the length of the queue is equal to the capacity, then the queue is full
-        return this.currentLength === this.capacity
+  dequeue() {
+    if (this.isEmpty()) {
+      return null;
     }
-
-    isEmpty(){
-        return this.currentLength === 0
+    // the dequeue happens at the front of the queue
+    const item = this.items[this.front];
+    this.items[this.front] = null;
+    this.front = (this.front + 1) % this.capacity;
+    this.currentLength -= 1;
+    if (this.isEmpty()) {
+      this.front = -1;
+      this.rear = -1;
     }
+    return item;
+  }
 
-    // the front and rear pointers are initialized to -1, and do not point to anywhere in the queue.
-    enqueue(element){
-
-        // check if the queue is full first
-        if(!this.isFull()){
-            // increment the rear pointer to point at index 0, then insert the element at the index 0
-            this.rear = (this.rear +1) % this.capacity
-            this.items[this.rear] = element
-            this.currentLength +=1 // increment the current length value
-            if(this.front === -1){
-                this.front = this.rear
-            }
-        }
-
+  peek() {
+    if (!this.isEmpty()) {
+      return this.items[this.front];
     }
+    return null;
+  }
 
-    dequeue(){
-
-        if(this.isEmpty()){
-            return null
-        }
-        // the dequeue happens at the front of the queue
-        const item = this.items[this.front]
-        this.items[this.front] = null
-        this.front = (this.front + 1) % this.capacity
-        this.currentLength -=1
-        if(this.isEmpty()){
-            this.front = -1
-            this.rear = -1
-        }
-        return item
-
+  print() {
+    if (this.isEmpty()) {
+      console.log("Queue is empty");
+    } else {
+      // start at the front pointer and travel to the rear pointer and print the elements, circle back to 0 after the last element
+      let i;
+      let str = ""; // str is used to store the elements in the queue
+      // i will start at the front pointer, move until i is not equal to the rear pointer
+      for (i = this.front; i !== this.rear; i = (i + 1) % this.capacity) {
+        str += this.items[i] + " ";
+      }
+      str += this.items[i];
+      console.log(str);
     }
-
-    peek(){
-        if(!this.isEmpty()){
-            return this.items[this.front]
-        }
-        return null
-    }
-
-    print(){
-        if(this.isEmpty()){
-            console.log("Queue is empty")
-        }
-        else{
-            // start at the front pointer and travel to the rear pointer and print the elements, circle back to 0 after the last element
-            let i
-            let str = '' // str is used to store the elements in the queue
-            for(i = this.front; i !== this.rear; i = (i+1)%this.capacity){
-
-
-            }
-        }
-    }
-
+  }
 }
+
+const queue = new CircularQueue(5);
+console.log(queue.isEmpty());
+queue.enqueue(20);
+queue.enqueue(24);
+queue.enqueue(50);
+queue.enqueue(80);
+queue.enqueue(90);
+console.log(queue.isFull());
+queue.print();
+console.log(queue.dequeue());
